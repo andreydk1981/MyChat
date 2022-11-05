@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mychat.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.TextArea?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox fx:controller="com.example.mychat.MyChatController" alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml">
+    <TextArea fx:id="chatArea" text="" minHeight="350" editable="false"/>
+    <HBox>
+        <TextField fx:id="inputArea" minWidth="200" maxHeight="50" onAction="#sendMessage"/>
+        <Button minHeight="50" minWidth="100" text="Send" onAction="#sendMessage"/>
+    </HBox>
 </VBox>
